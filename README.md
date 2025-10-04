@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+🎬 Movie Hub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React movie search application with Redux state management and Material-UI (MUI) styling.
+Users can search for movies, view results in a responsive movie grid, and see recent search terms.
 
-## Available Scripts
+🛠 Features
 
-In the project directory, you can run:
+🔍 Search Movies: Type a movie name and get instant results from the API.
 
-### `npm start`
+📝 Recent Searches: Stores and displays recent search terms using Redux.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🖼 Movie Grid: Shows movies in a responsive grid using MUI Grid and Cards.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+✨ Material-UI Styling: Beautiful UI with hover effects and modern design.
 
-### `npm test`
+⚡ Load More: Load more movies dynamically.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🖱 Interactive Search: Search icon inside the input field for better UX.
 
-### `npm run build`
+📂 Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+React – Frontend library for building UI.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Redux Toolkit – State management for search and recent searches.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Material-UI (MUI) – UI components and responsive layouts.
 
-### `npm run eject`
+Axios – Fetch data from movie API.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+IMDb API – Source of movie data.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🏗 Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Clone the repo
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+git clone https://github.com/amittssaini/movies-dashboard
+cd movies-dashboard
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Install dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm install
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Start the development server
 
-### Analyzing the Bundle Size
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Your app will run on http://localhost:3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🧩 Project Structure
+src/
+├─ components/
+|- |-Login.jsx            # Login page 
+|- |-MovieDetail.jsx      # Individual MOive detail page 
+│  ├─ MovieCard.jsx       # Individual movie card with hover zoom
+│  └─ Movies.jsx          # Main movies grid and search
+├─ redux/
+│  └─ searchSlice.js     # Redux slice for recent searches
+├─ assets/
+│  └─ login.png          # Login background image
+├─ App.jsx
+└─ index.js
 
-### Advanced Configuration
+🎨 UI Highlights
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Centered Search Bar with MUI TextField + Button inside a Stack
 
-### Deployment
+Search Icon inside the input field (endAdornment)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Recent Search Chips displayed using MUI Chip component
 
-### `npm run build` fails to minify
+Movie Cards with hover zoom effect using transform: scale(1.05)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Load More Button centered below the grid
+
+⚡ Redux for Recent Searches
+
+Added a searchSlice to store recentSearches in Redux state.
+
+Clicking a recent search updates the query and fetches movies automatically.
+
+Example usage:
+
+dispatch(addSearchTerm(query));
